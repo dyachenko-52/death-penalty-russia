@@ -37,9 +37,6 @@ const Navigation = () => {
               <Link to="/opinions" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/opinions')}`}>
                 Мнения
               </Link>
-              <Link to="/sources" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/sources')}`}>
-                Источники
-              </Link>
             </div>
           </div>
         </div>
@@ -65,9 +62,6 @@ const Navigation = () => {
           </Link>
           <Link to="/opinions" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/opinions')}`}>
             Мнения
-          </Link>
-          <Link to="/sources" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/sources')}`}>
-            Источники
           </Link>
         </div>
       </div>
