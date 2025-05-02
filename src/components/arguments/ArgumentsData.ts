@@ -1,13 +1,13 @@
 
-// Определяем тип аргумента
+import { type IconName } from '@/components/ui/icon';
+
 export type Argument = {
   title: string;
   description: string;
   details: string;
-  icon: string;
+  icon: IconName;
 };
 
-// Аргументы "За"
 export const proArguments: Argument[] = [
   {
     title: "Возмездие",
@@ -35,7 +35,6 @@ export const proArguments: Argument[] = [
   }
 ];
 
-// Аргументы "Против"
 export const contraArguments: Argument[] = [
   {
     title: "Судебные ошибки",
