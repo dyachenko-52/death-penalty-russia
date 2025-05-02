@@ -4,6 +4,7 @@ import Index from './pages/Index';
 import History from './pages/History';
 import Law from './pages/Law';
 import Arguments from './pages/Arguments';
+import Cases from './pages/Cases';
 import NotFound from './pages/NotFound';
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/history" element={<History />} />
         <Route path="/law" element={<Law />} />
         <Route path="/arguments" element={<Arguments />} />
+        <Route path="/cases" element={<Cases />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
