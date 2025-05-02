@@ -1,29 +1,20 @@
 
-import React from 'react';
+import { type Argument } from './ArgumentData';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import Icon from '@/components/ui/icon';
-import { Argument } from '@/types/arguments';
 
 interface ArgumentDetailProps {
-  argument: Argument | null;
+  argument: Argument;
 }
 
-const ArgumentDetail: React.FC<ArgumentDetailProps> = ({ argument }) => {
-  if (!argument) return null;
-  
+const ArgumentDetail = ({ argument }: ArgumentDetailProps) => {
   return (
-    <Card className="border-primary/20 h-full">
+    <Card className="border-primary/20 w-full">
       <CardHeader className="bg-primary/5 border-b">
-        <div className="flex items-center gap-3">
-          <Icon name={argument.icon} className="h-6 w-6 text-primary" />
-          <div>
-            <CardTitle className="text-lg sm:text-xl">{argument.title}</CardTitle>
-            <CardDescription>{argument.description}</CardDescription>
-          </div>
-        </div>
+        <CardTitle>{argument.title}</CardTitle>
+        <CardDescription>{argument.description}</CardDescription>
       </CardHeader>
-      <CardContent className="pt-4 sm:pt-6 text-sm sm:text-base md:text-lg overflow-auto">
-        <p className="whitespace-pre-line leading-relaxed">{argument.details}</p>
+      <CardContent className="pt-6 text-lg">
+        <p>{argument.details}</p>
       </CardContent>
     </Card>
   );

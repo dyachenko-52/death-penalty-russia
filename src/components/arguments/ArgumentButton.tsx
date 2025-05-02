@@ -1,6 +1,5 @@
 
 import { Button } from '@/components/ui/button';
-import Icon from '@/components/ui/icon';
 import { type Argument } from './ArgumentsData';
 
 interface ArgumentButtonProps {
@@ -17,9 +16,6 @@ const ArgumentButton = ({ argument, isSelected, onClick }: ArgumentButtonProps) 
       onClick={onClick}
     >
       <div className="flex items-start gap-3">
-        <div className="flex-shrink-0 mt-1">
-          <Icon name={argument.icon} className="h-5 w-5" />
-        </div>
         <div>
           <div className="font-medium">{argument.title}</div>
           <div className="text-sm text-muted-foreground mt-1">{argument.description}</div>

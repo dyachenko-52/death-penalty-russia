@@ -13,9 +13,9 @@ const Index = () => {
           <p className="text-xl mb-8">
             Смертная казнь — один из самых острых и спорных вопросов в современной России. 
             На этом сайте вы узнаете, как менялось отношение к высшей мере наказания в разные эпохи, 
-            какие аргументы приводят сторонники и противники, и каково положение в России сегодня.
+            какие аргументы приводят сторонники и противники, и каково положение в мире сегодня.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex justify-center gap-4">
             <Button asChild>
               <Link to="/history">Изучить историю</Link>
             </Button>
@@ -58,7 +58,7 @@ const Index = () => {
               <CardDescription>Дебаты о смертной казни</CardDescription>
             </CardHeader>
             <CardContent>
-              <p>Ознакомьтесь с аргументами сторонников и противников смертной казни в России.</p>
+              <p>Ознакомьтесь с аргументами сторонников и противников смертной казни в России и мире.</p>
               <Button variant="link" asChild className="p-0 mt-2">
                 <Link to="/arguments">Подробнее →</Link>
               </Button>
