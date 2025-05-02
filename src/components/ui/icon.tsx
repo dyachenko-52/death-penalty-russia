@@ -1,28 +1,44 @@
-import React from 'react';
-import * as LucideIcons from 'lucide-react';
-import { LucideProps } from 'lucide-react';
 
-interface IconProps extends LucideProps {
+import React from "react";
+import { LucideProps } from "lucide-react";
+import * as LucideIcons from "lucide-react";
+import { cn } from "@/lib/utils";
+
+export interface IconProps extends LucideProps {
   name: string;
   fallback?: string;
 }
 
-const Icon: React.FC<IconProps> = ({ name, fallback = 'CircleAlert', ...props }) => {
-  const IconComponent = (LucideIcons as Record<string, React.FC<LucideProps>>)[name];
-
-  if (!IconComponent) {
-    // Если иконка не найдена, используем fallback иконку
-    const FallbackIcon = (LucideIcons as Record<string, React.FC<LucideProps>>)[fallback];
-
-    // Если даже fallback не найден, возвращаем пустой span
-    if (!FallbackIcon) {
-      return <span className="text-xs text-gray-400">[icon]</span>;
-    }
-
-    return <FallbackIcon {...props} />;
+const Icon = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ name, fallback, className, ...props }, ref) => {
+    const getIcon = () => {
+      const iconName = name.endsWith("Icon") ? name : `${name}Icon`;
+      
+      // @ts-ignore - dynamic access to named exports
+      const LucideIcon = LucideIcons[name] || LucideIcons[iconName];
+      
+      if (LucideIcon) {
+        return <LucideIcon className={cn(className)} ref={ref} {...props} />;
+      }
+      
+      if (fallback) {
+        const FallbackIcon = 
+          // @ts-ignore - dynamic access to named exports
+          LucideIcons[fallback] || LucideIcons[`${fallback}Icon`];
+        
+        if (FallbackIcon) {
+          return <FallbackIcon className={cn(className)} ref={ref} {...props} />;
+        }
+      }
+      
+      // Default fallback icon if nothing else works
+      return <LucideIcons.HelpCircleIcon className={cn(className)} ref={ref} {...props} />;
+    };
+    
+    return getIcon();
   }
+);
 
-  return <IconComponent {...props} />;
-};
+Icon.displayName = "Icon";
 
 export default Icon;
