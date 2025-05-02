@@ -13,17 +13,17 @@ const ArgumentDetail = ({ argument }: ArgumentDetailProps) => {
   return (
     <div className="order-1 md:order-2">
       <Card className="border-primary/20 h-full">
-        <CardHeader className="bg-primary/5 border-b">
-          <div className="flex items-center gap-3">
-            <Icon name={argument.icon} className="h-6 w-6 text-primary" />
+        <CardHeader className="bg-primary/5 border-b p-3 sm:p-6">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Icon name={argument.icon} className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
             <div>
-              <CardTitle>{argument.title}</CardTitle>
-              <CardDescription>{argument.description}</CardDescription>
+              <CardTitle className="text-base sm:text-xl">{argument.title}</CardTitle>
+              <CardDescription className="text-sm">{argument.description}</CardDescription>
             </div>
           </div>
         </CardHeader>
-        <CardContent className="pt-6 text-lg">
-          <p className="whitespace-pre-line leading-relaxed">{argument.details}</p>
+        <CardContent className="pt-4 sm:pt-6 text-sm sm:text-base p-3 sm:p-6">
+          <p className="leading-snug sm:leading-relaxed">{argument.details}</p>
         </CardContent>
       </Card>
     </div>

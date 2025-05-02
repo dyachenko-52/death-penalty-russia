@@ -12,19 +12,19 @@ const Arguments = () => {
 
   return (
     <PageLayout>
-      <div className="animate-fade-in max-w-6xl mx-auto">
-        <h1>Две стороны спора</h1>
+      <div className="animate-fade-in px-0 sm:px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Две стороны спора</h1>
         
-        <p className="text-lg mb-8">
-          Вопрос о смертной казни вызывает одни из самых острых дискуссий в обществе. 
-          Сторонники и противники приводят весомые аргументы в защиту своих позиций. 
-          Рассмотрим ключевые доводы обеих сторон этого сложного этического и правового спора.
+        <p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6">
+          Вопрос о смертной казни вызывает острые дискуссии в обществе. 
+          Сторонники и противники приводят весомые аргументы. 
+          Рассмотрим ключевые доводы с обеих сторон.
         </p>
         
-        <Tabs defaultValue="pro" className="mb-8">
-          <TabsList className="grid w-full grid-cols-2 mb-6">
-            <TabsTrigger value="pro" className="text-lg py-3">Аргументы "За"</TabsTrigger>
-            <TabsTrigger value="contra" className="text-lg py-3">Аргументы "Против"</TabsTrigger>
+        <Tabs defaultValue="pro" className="mb-6 sm:mb-8">
+          <TabsList className="grid w-full grid-cols-2 mb-4 sm:mb-6">
+            <TabsTrigger value="pro" className="text-sm sm:text-base md:text-lg py-2 sm:py-3">Аргументы "За"</TabsTrigger>
+            <TabsTrigger value="contra" className="text-sm sm:text-base md:text-lg py-2 sm:py-3">Аргументы "Против"</TabsTrigger>
           </TabsList>
           
           <TabsContent value="pro" className="mt-0">
