@@ -34,9 +34,6 @@ const Navigation = () => {
               <Link to="/cases" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/cases')}`}>
                 Громкие дела
               </Link>
-              <Link to="/world" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/world')}`}>
-                В мире
-              </Link>
               <Link to="/opinions" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/opinions')}`}>
                 Мнения
               </Link>
@@ -65,9 +62,6 @@ const Navigation = () => {
           </Link>
           <Link to="/cases" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/cases')}`}>
             Громкие дела
-          </Link>
-          <Link to="/world" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/world')}`}>
-            В мире
           </Link>
           <Link to="/opinions" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/opinions')}`}>
             Мнения
