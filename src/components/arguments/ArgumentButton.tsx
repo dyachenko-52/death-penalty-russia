@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
-import { type Argument } from './ArgumentsData';
+import { type Argument } from '@/types/arguments';
 
 interface ArgumentButtonProps {
   argument: Argument;

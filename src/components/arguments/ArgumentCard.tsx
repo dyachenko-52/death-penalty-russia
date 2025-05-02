@@ -1,28 +1,24 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import Icon from '@/components/ui/icon';
-import { type Argument } from './ArgumentsData';
+import { type Argument } from '@/types/arguments';
+import ArgumentDetail from './ArgumentDetail';
+import ArgumentList from './ArgumentList';
 
 interface ArgumentCardProps {
-  argument: Argument;
+  arguments: Argument[];
+  selectedArgument: Argument | null;
+  onSelect: (argument: Argument) => void;
 }
 
-const ArgumentCard = ({ argument }: ArgumentCardProps) => {
+const ArgumentCard = ({ arguments: args, selectedArgument, onSelect }: ArgumentCardProps) => {
   return (
-    <Card className="border-primary/20 h-full">
-      <CardHeader className="bg-primary/5 border-b">
-        <div className="flex items-center gap-3">
-          <Icon name={argument.icon} className="h-6 w-6 text-primary" />
-          <div>
-            <CardTitle>{argument.title}</CardTitle>
-            <CardDescription>{argument.description}</CardDescription>
-          </div>
-        </div>
-      </CardHeader>
-      <CardContent className="pt-6 text-lg">
-        <p className="whitespace-pre-line leading-relaxed">{argument.details}</p>
-      </CardContent>
-    </Card>
+    <div className="grid md:grid-cols-[300px_1fr] gap-6">
+      <ArgumentList
+        arguments={args}
+        selectedArgument={selectedArgument}
+        onSelect={onSelect}
+      />
+      <ArgumentDetail argument={selectedArgument} />
+    </div>
   );
 };
 

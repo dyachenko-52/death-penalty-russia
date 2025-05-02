@@ -4,8 +4,10 @@ import { LucideProps } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 import { cn } from "@/lib/utils";
 
+export type IconName = string;
+
 export interface IconProps extends LucideProps {
-  name: string;
+  name: IconName;
   fallback?: string;
 }
 
