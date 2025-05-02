@@ -23,7 +23,11 @@ const ArgumentDetail = ({ argument }: ArgumentDetailProps) => {
           </div>
         </CardHeader>
         <CardContent className="pt-4 sm:pt-6 text-sm sm:text-base p-3 sm:p-6">
-          <p className="leading-snug sm:leading-relaxed">{argument.details}</p>
+          {argument.details.split('\n\n').map((paragraph, index) => (
+            <p key={index} className="mb-3 leading-snug sm:leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
         </CardContent>
       </Card>
     </div>

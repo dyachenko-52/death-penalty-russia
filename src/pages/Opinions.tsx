@@ -41,63 +41,54 @@ const researchers: ResearcherOpinion[] = [
     period: "1843-1923",
     opinion: "Николай Степанович Таганцев, один из классиков российской юриспруденции, выступал за постепенное ограничение и конечную отмену смертной казни. В своем труде «Русское уголовное право» он писал: «Применение смертной казни постепенно суживается историей; последняя выдвигает на смену ей другие виды наказания, указывает на другие способы борьбы с преступностью». Таганцев считал, что смертная казнь не является эффективным средством предупреждения преступлений и противоречит цели исправления преступника. При этом он признавал, что полная отмена смертной казни возможна только при соответствующем уровне развития общества.",
     initials: "НТ"
+  },
+  {
+    name: "А. Ф. Кистяковский",
+    title: "Юрист, профессор уголовного права",
+    period: "1833-1885",
+    opinion: "Александр Фёдорович Кистяковский, известный украинский и российский учёный-криминалист, выступал решительным противником смертной казни. В своём труде «Исследование о смертной казни» (1867) он детально проанализировал историю и проблемы применения этого наказания. Кистяковский утверждал, что смертная казнь не соответствует основным целям наказания — исправлению преступника и общему предупреждению преступлений. Он аргументировал, что суровость наказания не предотвращает преступления так эффективно, как неотвратимость наказания, и что общество должно найти более гуманные и эффективные способы борьбы с преступностью.",
+    initials: "АК"
   }
 ];
 
 const Opinions = () => {
   return (
     <PageLayout>
-      <div className="animate-fade-in max-w-5xl mx-auto">
-        <h1>Мнения исследователей</h1>
+      <div className="animate-fade-in max-w-5xl mx-auto px-2 sm:px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Мнения исследователей</h1>
         
-        <p className="text-lg mb-8">
+        <p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6">
           Вопрос о смертной казни на протяжении веков привлекал внимание выдающихся российских юристов, 
-          философов и общественных деятелей. Их мнения формировали научный и общественный дискурс по 
-          этой сложной этической и правовой проблеме. Ниже представлены взгляды некоторых известных 
-          российских исследователей на проблему смертной казни.
+          философов и общественных деятелей. Их взгляды формировали научный и общественный дискурс по 
+          этой сложной этической и правовой проблеме.
         </p>
         
-        <div className="space-y-8">
+        <div className="space-y-4 sm:space-y-6">
           {researchers.map((researcher, i) => (
             <Card key={i} className="overflow-hidden">
-              <div className="grid md:grid-cols-[auto_1fr] gap-6 p-6">
+              <div className="grid md:grid-cols-[auto_1fr] gap-4 sm:gap-6 p-4 sm:p-6">
                 <div className="flex flex-col items-center">
-                  <Avatar className="h-24 w-24 mb-3">
-                    <AvatarFallback className="text-xl bg-primary text-primary-foreground">
+                  <Avatar className="h-16 w-16 sm:h-24 sm:w-24 mb-2 sm:mb-3">
+                    <AvatarFallback className="text-lg sm:text-xl bg-primary text-primary-foreground">
                       {researcher.initials}
                     </AvatarFallback>
                   </Avatar>
-                  <p className="text-sm text-gray-500 text-center">{researcher.period}</p>
+                  <p className="text-xs sm:text-sm text-gray-500 text-center">{researcher.period}</p>
                 </div>
                 
                 <div>
-                  <CardHeader className="p-0 pb-4">
-                    <CardTitle className="text-2xl">{researcher.name}</CardTitle>
-                    <CardDescription className="text-lg">{researcher.title}</CardDescription>
+                  <CardHeader className="p-0 pb-2 sm:pb-4">
+                    <CardTitle className="text-xl sm:text-2xl">{researcher.name}</CardTitle>
+                    <CardDescription className="text-sm sm:text-base">{researcher.title}</CardDescription>
                   </CardHeader>
-                  <Separator className="my-4" />
-                  <CardContent className="p-0">
-                    <p className="text-gray-700">{researcher.opinion}</p>
+                  <Separator className="my-2 sm:my-4" />
+                  <CardContent className="p-0 text-sm sm:text-base">
+                    <p className="text-gray-700 leading-snug sm:leading-relaxed">{researcher.opinion}</p>
                   </CardContent>
                 </div>
               </div>
             </Card>
           ))}
-        </div>
-        
-        <div className="p-6 bg-muted rounded-lg mt-8">
-          <h2 className="text-xl font-semibold mb-4">Эволюция взглядов</h2>
-          <p>
-            Анализируя мнения российских исследователей, можно заметить, что несмотря на различия в их взглядах, 
-            большинство из них склонялись к идее постепенного ограничения применения смертной казни вплоть 
-            до полной её отмены. Эти учёные признавали несовершенство системы правосудия и риск судебных ошибок,
-            а также ставили под сомнение эффективность смертной казни как инструмента предупреждения преступлений.
-          </p>
-          <p className="mt-4">
-            Научные дискуссии российских юристов и криминологов оказали значительное влияние на развитие 
-            уголовного права и практику применения наказаний в России, способствуя гуманизации системы 
-            правосудия и ограничению сферы применения смертной казни.
-          </p>
         </div>
       </div>
     </PageLayout>
