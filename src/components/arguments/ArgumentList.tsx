@@ -12,8 +12,8 @@ interface ArgumentListProps {
 const ArgumentList = ({ arguments: args, selectedArgument, onSelect }: ArgumentListProps) => {
   return (
     <div className="order-2 md:order-1">
-      <ScrollArea className="h-[200px] sm:h-[250px] md:h-[400px] rounded-md border p-2 sm:p-4">
-        <div className="space-y-2 sm:space-y-3 pr-2 sm:pr-4">
+      <ScrollArea className="h-[280px] sm:h-[350px] md:h-[480px] rounded-md border p-1 sm:p-2">
+        <div className="space-y-2 pr-1 sm:pr-2">
           {args.map((arg, i) => (
             <ArgumentButton
               key={i}

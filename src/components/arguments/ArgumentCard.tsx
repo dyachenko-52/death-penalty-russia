@@ -11,7 +11,7 @@ interface ArgumentCardProps {
 
 const ArgumentCard = ({ arguments: args, selectedArgument, onSelect }: ArgumentCardProps) => {
   return (
-    <div className="grid md:grid-cols-[250px_1fr] lg:grid-cols-[300px_1fr] gap-4 sm:gap-6">
+    <div className="grid md:grid-cols-[200px_1fr] lg:grid-cols-[240px_1fr] gap-3 sm:gap-4">
       <ArgumentList
         arguments={args}
         selectedArgument={selectedArgument}

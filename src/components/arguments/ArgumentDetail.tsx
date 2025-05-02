@@ -13,18 +13,18 @@ const ArgumentDetail = ({ argument }: ArgumentDetailProps) => {
   return (
     <div className="order-1 md:order-2">
       <Card className="border-primary/20 h-full">
-        <CardHeader className="bg-primary/5 border-b p-3 sm:p-6">
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Icon name={argument.icon} className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
+        <CardHeader className="bg-primary/5 border-b p-2 sm:p-4">
+          <div className="flex items-center gap-2">
+            <Icon name={argument.icon} className="h-5 w-5 text-primary flex-shrink-0" />
             <div>
-              <CardTitle className="text-base sm:text-xl">{argument.title}</CardTitle>
-              <CardDescription className="text-sm">{argument.description}</CardDescription>
+              <CardTitle className="text-sm sm:text-lg">{argument.title}</CardTitle>
+              <CardDescription className="text-xs sm:text-sm">{argument.description}</CardDescription>
             </div>
           </div>
         </CardHeader>
-        <CardContent className="pt-4 sm:pt-6 text-sm sm:text-base p-3 sm:p-6">
+        <CardContent className="pt-3 sm:pt-4 text-xs sm:text-sm p-2 sm:p-4 max-h-[400px] md:max-h-[450px] overflow-y-auto">
           {argument.details.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="mb-3 leading-snug sm:leading-relaxed">
+            <p key={index} className="mb-2 leading-relaxed">
               {paragraph}
             </p>
           ))}
