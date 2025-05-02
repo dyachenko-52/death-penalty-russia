@@ -2,7 +2,6 @@
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { AlertCircle, Scale, FileText, GavelIcon } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import Icon from '@/components/ui/icon';
 
@@ -10,7 +9,12 @@ const Law = () => {
   return (
     <PageLayout>
       <div className="animate-fade-in max-w-4xl mx-auto">
-        <h1>Правовой статус смертной казни</h1>
+        <div className="mb-6 flex items-center gap-3">
+          <div className="bg-primary/10 p-2 rounded-full">
+            <Icon name="Scale" className="h-6 w-6 text-primary" />
+          </div>
+          <h1 className="text-2xl font-bold">Правовой статус смертной казни</h1>
+        </div>
         
         <Alert className="mb-8 border-primary/30 bg-primary/5">
           <Icon name="AlertCircle" className="h-5 w-5" />
@@ -52,12 +56,27 @@ const Law = () => {
               <p>
                 Согласно статье 59 УК РФ, смертная казнь предусмотрена за следующие преступления:
               </p>
-              <ul className="my-4">
-                <li>Убийство при отягчающих обстоятельствах (ст. 105 ч. 2)</li>
-                <li>Посягательство на жизнь государственного или общественного деятеля (ст. 277)</li>
-                <li>Посягательство на жизнь лица, осуществляющего правосудие или предварительное расследование (ст. 295)</li>
-                <li>Посягательство на жизнь сотрудника правоохранительного органа (ст. 317)</li>
-                <li>Геноцид (ст. 357)</li>
+              <ul className="my-4 space-y-2">
+                <li className="flex items-start gap-2">
+                  <Icon name="CircleDot" className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                  <span>Убийство при отягчающих обстоятельствах (ст. 105 ч. 2)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="CircleDot" className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                  <span>Посягательство на жизнь государственного или общественного деятеля (ст. 277)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="CircleDot" className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                  <span>Посягательство на жизнь лица, осуществляющего правосудие или предварительное расследование (ст. 295)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="CircleDot" className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                  <span>Посягательство на жизнь сотрудника правоохранительного органа (ст. 317)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Icon name="CircleDot" className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                  <span>Геноцид (ст. 357)</span>
+                </li>
               </ul>
               <p>
                 При этом смертная казнь не назначается женщинам, лицам, совершившим преступления в возрасте до 18 лет, 
@@ -68,68 +87,94 @@ const Law = () => {
         </div>
         
         <div className="space-y-6 mb-8">
-          <h2>Мораторий на смертную казнь</h2>
+          <div className="flex items-center gap-2 mb-4">
+            <Icon name="Gavel" className="h-5 w-5 text-primary" />
+            <h2 className="text-xl font-semibold">Мораторий на смертную казнь</h2>
+          </div>
           <div className="rounded-lg border p-6 bg-card">
             <div className="flex flex-col gap-4">
-              <div>
-                <h3 className="text-lg font-medium">Указ Президента РФ (1996)</h3>
-                <p>
-                  В 1996 году указом Президента РФ было предписано поэтапно сокращать применение смертной казни 
-                  в связи с вступлением России в Совет Европы и необходимостью ратификации Протокола №6 
-                  к Европейской конвенции о защите прав человека и основных свобод.
-                </p>
+              <div className="flex gap-3">
+                <div className="bg-primary/10 rounded-full p-2 h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1">
+                  <Icon name="FileText" className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium">Указ Президента РФ (1996)</h3>
+                  <p>
+                    В 1996 году указом Президента РФ было предписано поэтапно сокращать применение смертной казни 
+                    в связи с вступлением России в Совет Европы и необходимостью ратификации Протокола №6 
+                    к Европейской конвенции о защите прав человека и основных свобод.
+                  </p>
+                </div>
               </div>
               
               <Separator />
               
-              <div>
-                <h3 className="text-lg font-medium">Постановление Конституционного Суда РФ (1999)</h3>
-                <p>
-                  2 февраля 1999 года Конституционный Суд вынес постановление, согласно которому 
-                  назначение смертной казни невозможно до тех пор, пока во всех субъектах Российской Федерации 
-                  не будут созданы суды присяжных.
-                </p>
+              <div className="flex gap-3">
+                <div className="bg-primary/10 rounded-full p-2 h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1">
+                  <Icon name="Building" className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium">Постановление Конституционного Суда РФ (1999)</h3>
+                  <p>
+                    2 февраля 1999 года Конституционный Суд вынес постановление, согласно которому 
+                    назначение смертной казни невозможно до тех пор, пока во всех субъектах Российской Федерации 
+                    не будут созданы суды присяжных.
+                  </p>
+                </div>
               </div>
               
               <Separator />
               
-              <div>
-                <h3 className="text-lg font-medium">Определение Конституционного Суда РФ (2009)</h3>
-                <p>
-                  19 ноября 2009 года Конституционный Суд уточнил, что положения его постановления 1999 года 
-                  сохраняют силу и после создания судов присяжных во всех субъектах РФ. 
-                  Суд признал, что в России сложился "конституционно-правовой режим, в рамках которого 
-                  происходит необратимый процесс, направленный на отмену смертной казни".
-                </p>
+              <div className="flex gap-3">
+                <div className="bg-primary/10 rounded-full p-2 h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1">
+                  <Icon name="LayoutDashboard" className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium">Определение Конституционного Суда РФ (2009)</h3>
+                  <p>
+                    19 ноября 2009 года Конституционный Суд уточнил, что положения его постановления 1999 года 
+                    сохраняют силу и после создания судов присяжных во всех субъектах РФ. 
+                    Суд признал, что в России сложился "конституционно-правовой режим, в рамках которого 
+                    происходит необратимый процесс, направленный на отмену смертной казни".
+                  </p>
+                </div>
               </div>
               
               <Separator />
               
-              <div>
-                <h3 className="text-lg font-medium">Статус после выхода из Совета Европы (2022)</h3>
-                <p>
-                  Несмотря на выход России из Совета Европы в 2022 году, мораторий на смертную казнь 
-                  официально не отменён. Существующий правовой режим продолжает действовать на основании 
-                  ранее принятых постановлений Конституционного Суда РФ.
-                </p>
+              <div className="flex gap-3">
+                <div className="bg-primary/10 rounded-full p-2 h-8 w-8 flex items-center justify-center flex-shrink-0 mt-1">
+                  <Icon name="Globe" className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium">Статус после выхода из Совета Европы (2022)</h3>
+                  <p>
+                    Несмотря на выход России из Совета Европы в 2022 году, мораторий на смертную казнь 
+                    официально не отменён. Существующий правовой режим продолжает действовать на основании 
+                    ранее принятых постановлений Конституционного Суда РФ.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
         
-        <div className="bg-muted p-6 rounded-lg">
-          <h2>Международно-правовой аспект</h2>
-          <p>
-            Протокол №6 к Европейской конвенции о защите прав человека и основных свобод, 
-            отменяющий смертную казнь в мирное время, был подписан Россией в 1997 году, 
-            но так и не был ратифицирован. Более строгий Протокол №13, полностью отменяющий 
-            смертную казнь при любых обстоятельствах, Россия не подписывала.
-          </p>
-          <p>
-            В 2022 году после выхода из Совета Европы Россия больше не связана обязательством 
-            по ратификации этих протоколов, однако действие моратория поддерживается внутренним 
-            законодательством и сложившейся правовой традицией.
-          </p>
+        <div className="bg-muted p-6 rounded-lg flex gap-3">
+          <Icon name="Globe2" className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+          <div>
+            <h2 className="text-xl font-semibold mb-2">Международно-правовой аспект</h2>
+            <p>
+              Протокол №6 к Европейской конвенции о защите прав человека и основных свобод, 
+              отменяющий смертную казнь в мирное время, был подписан Россией в 1997 году, 
+              но так и не был ратифицирован. Более строгий Протокол №13, полностью отменяющий 
+              смертную казнь при любых обстоятельствах, Россия не подписывала.
+            </p>
+            <p className="mt-2">
+              В 2022 году после выхода из Совета Европы Россия больше не связана обязательством 
+              по ратификации этих протоколов, однако действие моратория поддерживается внутренним 
+              законодательством и сложившейся правовой традицией.
+            </p>
+          </div>
         </div>
       </div>
     </PageLayout>

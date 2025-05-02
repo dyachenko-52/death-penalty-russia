@@ -1,17 +1,25 @@
 
 import PageLayout from '@/components/PageLayout';
 import { Timeline, TimelineContent, TimelineItem, TimelineSeparator, TimelineDot, TimelineConnector } from '@/components/ui/timeline';
+import Icon from '@/components/ui/icon';
 
 const History = () => {
   return (
     <PageLayout>
       <div className="animate-fade-in max-w-4xl mx-auto">
-        <h1>Этапы развития смертной казни в России</h1>
+        <div className="mb-6 flex items-center gap-3">
+          <div className="bg-primary/10 p-2 rounded-full">
+            <Icon name="Clock" className="h-6 w-6 text-primary" />
+          </div>
+          <h1 className="text-2xl font-bold">Этапы развития смертной казни в России</h1>
+        </div>
         
         <Timeline className="my-8">
           <TimelineItem>
             <TimelineSeparator>
-              <TimelineDot className="bg-primary" />
+              <TimelineDot className="bg-primary flex items-center justify-center">
+                <Icon name="Crown" className="h-4 w-4 text-white" />
+              </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
@@ -26,7 +34,9 @@ const History = () => {
           
           <TimelineItem>
             <TimelineSeparator>
-              <TimelineDot className="bg-primary" />
+              <TimelineDot className="bg-primary flex items-center justify-center">
+                <Icon name="Flag" className="h-4 w-4 text-white" />
+              </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
@@ -41,7 +51,9 @@ const History = () => {
           
           <TimelineItem>
             <TimelineSeparator>
-              <TimelineDot className="bg-primary" />
+              <TimelineDot className="bg-primary flex items-center justify-center">
+                <Icon name="Building" className="h-4 w-4 text-white" />
+              </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
@@ -56,7 +68,9 @@ const History = () => {
           
           <TimelineItem>
             <TimelineSeparator>
-              <TimelineDot className="bg-primary" />
+              <TimelineDot className="bg-primary flex items-center justify-center">
+                <Icon name="Pause" className="h-4 w-4 text-white" />
+              </TimelineDot>
             </TimelineSeparator>
             <TimelineContent>
               <h2 className="text-xl font-semibold">Мораторий (с 1996 года)</h2>
@@ -70,13 +84,16 @@ const History = () => {
           </TimelineItem>
         </Timeline>
         
-        <div className="p-4 bg-primary/10 rounded-lg border border-primary/20 mt-8">
-          <h2 className="text-xl font-semibold mb-2">Современное состояние</h2>
-          <p>
-            Несмотря на выход России из Совета Европы в 2022 году, мораторий на смертную казнь продолжает действовать. 
-            Вопрос о возможном возвращении смертной казни периодически поднимается в общественных и политических дискуссиях, 
-            однако пока официальной позиции о снятии моратория не объявлено.
-          </p>
+        <div className="p-4 bg-primary/10 rounded-lg border border-primary/20 mt-8 flex gap-3">
+          <Icon name="AlertCircle" className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+          <div>
+            <h2 className="text-xl font-semibold mb-2">Современное состояние</h2>
+            <p>
+              Несмотря на выход России из Совета Европы в 2022 году, мораторий на смертную казнь продолжает действовать. 
+              Вопрос о возможном возвращении смертной казни периодически поднимается в общественных и политических дискуссиях, 
+              однако пока официальной позиции о снятии моратория не объявлено.
+            </p>
+          </div>
         </div>
       </div>
     </PageLayout>
